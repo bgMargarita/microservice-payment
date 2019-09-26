@@ -17,6 +17,10 @@ public class Payment {
     private UUID paymentMethodId;
     private Double totalPrice;
 
+    public Payment() {
+
+    }
+
     public Payment(UUID id, UUID statusId, String clientName, UUID orderId, UUID paymentMethodId, Double totalPrice) {
 
         this.id = id;
