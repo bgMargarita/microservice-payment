@@ -10,7 +10,11 @@ import java.util.UUID;
 
 @Service
 public class PaymentServiceImpl implements PaymentService {
-    PaymentRepository paymentRepository;
+    private final PaymentRepository paymentRepository;
+
+    public PaymentServiceImpl(PaymentRepository paymentRepository) {
+        this.paymentRepository = paymentRepository;
+    }
 
     @Override
     public void performPayment(StatusDTO status, PaymentMethodDTO paymentMethod) {

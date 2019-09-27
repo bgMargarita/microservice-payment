@@ -1,10 +1,11 @@
 package com.microservice.payment.demo.service;
 import com.microservice.payment.demo.DTO.*;
+import com.microservice.payment.demo.entity.Payment;
 
 import java.util.UUID;
 
 public interface PaymentService {
     void performPayment(StatusDTO status,PaymentMethodDTO paymentMethod );
-    void getPrice(UUID id);
-    void getPayment(UUID id);
+    Double getPrice(UUID id);
+    Payment getPayment(UUID id);
 }
