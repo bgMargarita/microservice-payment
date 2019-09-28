@@ -17,7 +17,7 @@ public class PaymentMethodDTO {
         this.name = name;
     }
 
-    String name() {
+    String getName() {
         return this.name;
     }
 }

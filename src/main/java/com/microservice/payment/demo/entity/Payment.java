@@ -1,5 +1,8 @@
 package com.microservice.payment.demo.entity;
 
+import com.microservice.payment.demo.DTO.PaymentMethodDTO;
+import com.microservice.payment.demo.DTO.StatusDTO;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,23 +14,23 @@ public class Payment {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
-    private UUID statusId;
+    private StatusDTO status;
     private String clientName;
     private UUID orderId;
-    private UUID paymentMethodId;
+    private PaymentMethodDTO paymentMethod;
     private Double totalPrice;
 
     public Payment() {
 
     }
 
-    public Payment(UUID id, UUID statusId, String clientName, UUID orderId, UUID paymentMethodId, Double totalPrice) {
+    public Payment(UUID id, StatusDTO status, String clientName, UUID orderId, PaymentMethodDTO paymentMethod, Double totalPrice) {
 
         this.id = id;
-        this.statusId = statusId;
+        this.status = status;
         this.clientName = clientName;
         this.orderId = orderId;
-        this.paymentMethodId = paymentMethodId;
+        this.paymentMethod = paymentMethod;
         this.totalPrice = totalPrice;
     }
 
@@ -47,12 +50,12 @@ public class Payment {
         this.clientName = clientName;
     }
 
-    public UUID getStatusId() {
-        return statusId;
+    public StatusDTO getStatus() {
+        return status;
     }
 
-    public void setStatusId(UUID statusId) {
-        this.statusId = statusId;
+    public void setStatus(StatusDTO status) {
+        this.status = status;
     }
 
     public UUID getId() {
@@ -71,11 +74,11 @@ public class Payment {
         this.totalPrice = totalPrice;
     }
 
-    public UUID getPaymentMethodId() {
-        return paymentMethodId;
+    public PaymentMethodDTO getPaymentMethod() {
+        return paymentMethod;
     }
 
-    public void setPaymentMethodId(UUID paymentMethodId) {
-        this.paymentMethodId = paymentMethodId;
+    public void setPaymentMethod(PaymentMethodDTO paymentMethod) {
+        this.paymentMethod = paymentMethod;
     }
 }
