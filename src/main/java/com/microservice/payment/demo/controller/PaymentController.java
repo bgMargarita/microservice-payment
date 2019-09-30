@@ -20,8 +20,8 @@ public class PaymentController {
         this.paymentService = paymentService;
     }
     @PostMapping("/perform")
-    public void PerformPayment(UUID id, StatusDTO status, PaymentMethodDTO paymentMethod){
-        paymentService.performPayment(id, status, paymentMethod);
+    public void PerformPayment(UUID id, PaymentMethodDTO paymentMethod){
+        paymentService.performPayment(id, paymentMethod);
     }
     @GetMapping("/price/{id}")
     public Double GetPrice(@PathVariable("id") UUID paymentId){

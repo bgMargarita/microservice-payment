@@ -17,10 +17,10 @@ public class PaymentServiceImpl implements PaymentService {
     }
 
     @Override
-    public void performPayment(UUID id, StatusDTO status, PaymentMethodDTO paymentMethod) {
+    public void performPayment(UUID id, PaymentMethodDTO paymentMethod) {
         Payment payment = paymentRepository.findById(id);
-        payment.getStatus().setName(status.getName());
-        payment.getPaymentMethod().setName(paymentMethod.getName());
+        payment.setStatus(StatusDTO.APPROVED);
+        payment.setPaymentMethod(paymentMethod);
         paymentRepository.save(payment);
     }
 
