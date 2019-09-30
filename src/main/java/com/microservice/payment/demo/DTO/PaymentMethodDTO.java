@@ -5,6 +5,7 @@ import java.util.UUID;
 public class PaymentMethodDTO {
     private UUID id;
     private String name;
+
     void setId(UUID id) {
         this.id = id;
     }
@@ -13,11 +14,11 @@ public class PaymentMethodDTO {
         return this.id;
     }
 
-    void setName(String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
-    String getName() {
+    public String getName() {
         return this.name;
     }
 }

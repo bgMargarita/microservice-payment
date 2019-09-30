@@ -14,11 +14,11 @@ public class StatusDTO {
         return this.id;
     }
 
-    void setName(String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
-    String name() {
+    public String getName() {
         return this.name;
     }
 }
